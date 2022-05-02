@@ -1,13 +1,45 @@
+"use strict";
+
 //EASY
-const todayExercise = (exercise) => `Today's exercise: ${exercise}`;
-console.log(todayExercise("running"));
-console.log(todayExercise("swimming"));
+const todayExercise = (e) => {
+  const exercise = (e) => {
+    return `Today's exercise: ${e}`;
+  };
+  return exercise;
+};
+const run = todayExercise();
+const swim = todayExercise();
+console.log(swim("swimming"));
+console.log(run("running"));
 
 //MEDIUM
-const cutPizzaSlices = 8;
+const pizzaCutter = (pizzaSlices) => {
+  const sharePizza = (numofPeople) => {
+    return `Each person gets ${pizzaSlices / numofPeople} slices of pizza`;
+  };
+  return sharePizza;
+};
 
-const sharePizza = (numofPeople) =>
-  `Each person gets ${cutPizzaSlices / numofPeople} slices of pizza`;
+const pizza = pizzaCutter(8);
+console.log(pizza(2));
+console.log(pizza(3));
 
-console.log(sharePizza(2));
-console.log(sharePizza(3));
+//HARD
+const secured = () => {
+  const retrieve = () => {
+    const pii = {
+      name: "Anthony",
+      ssn: 123456789,
+      getName: function () {
+        return this.name;
+      },
+    };
+    return pii.getName();
+  };
+  return retrieve();
+};
+
+const nameOnly = secured();
+console.log(nameOnly);
+
+//VERY HARD
